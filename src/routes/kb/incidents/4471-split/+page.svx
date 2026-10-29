@@ -4,7 +4,7 @@ title: '#4471 · three problems, not one'
 owner: MorleyB
 status: open
 reviewed: 2026-10-29
-signature: MorleyB
+signature: 'v1.eyJzdWIiOiIxNzU4IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMzMTMwMDQsImV4cCI6MTc5MzM5OTQwNH0.HP3qZ64O8cwGD9K8F0Qxq76nppeH3Oo-9ksiIL1lWPk'
 ---
 
 <script>
