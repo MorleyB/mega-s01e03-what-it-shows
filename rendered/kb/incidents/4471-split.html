@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../_app/immutable/entry/start.YHWwh1DH.js" rel="modulepreload">
+    <link href="../../_app/immutable/entry/start.DGwWcvrN.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/fruYDLqp.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/CjInV1La.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DgxpgGpk.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/Cbdj2qAo.js" rel="modulepreload">
-		<link href="../../_app/immutable/entry/app.Be33CEIg.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.DyOFonq7.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BkYfdh9H.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/BD3UdjSR.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/wnmzq4eU.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/TGQFHf5e.js" rel="modulepreload">
 		<link href="../../_app/immutable/nodes/0.CCpBT1ka.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/ybC49tkz.js" rel="modulepreload">
-		<link href="../../_app/immutable/nodes/5.BtAAGLMy.js" rel="modulepreload">
-		<link href="../../_app/immutable/chunks/Diky8_GS.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/5.DJtGSwSS.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/MevC7x3B.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/DFPV7QJw.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/M7cEM8C8.js" rel="modulepreload">
 		<link href="../../_app/immutable/chunks/iXLSwIXB.js" rel="modulepreload">
@@ -26,8 +26,9 @@
   </head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 · three problems, not one</h1> <p class="meta svelte-e2jw2j"><span>owner <b>MorleyB</b></span> <span class="status open svelte-e2jw2j">open</span> <span class="svelte-e2jw2j">reviewed 2026-10-29 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p><a href="/kb/incidents/4471">#4471</a> says one issue with one fix queued. Its reports describe three
-problems. The queued parser fix closes only the first one. Each problem now has its own ticket.</p> <aside class="warn svelte-17bri61"><!---->#4471 is not one known issue. Fixing the parser leaves the booking-v3 form hint and the one-day
-move open.<!----></aside><!----> <h2>What the reports say</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471
+problems. Each problem has its own ticket.</p> <aside class="warn svelte-17bri61"><!---->#4471 was closed on 5 October. Two of its three problems are done: the parser is fixed and the
+booking-v3 form is retired. The one-day move is not fixed. Its ticket stays open.<!----></aside><!----> <h2>Where each problem stands</h2> <p>Engineering update, #4471 closed 5 October:</p> <ul><li><strong>parser</strong>: fixed, <code>fix(dates): parse dd/mm for eu locales</code>. Ticket closed as completed.</li> <li><strong>hint</strong>: won’t fix, the booking-v3 form is retired. Ticket closed as not planned.</li> <li><strong>shift</strong>: not in the update. Nothing fixed it, so its ticket <strong>stays open</strong>. The parser fix
+changes how day and month are read; it does not move a date back by one day.</li></ul> <h2>What the reports say</h2> <p class="sum svelte-1op6c6"><strong>412</strong> reports merged into #4471
   (427 rows in the export; 15 are repeats of the same id) · <strong>3</strong> problems · counted the desk's way: a report counts
   under the cause it is filed under</p> <table><thead><tr><th>problem</th><th>reports</th><th>intake tagged as</th><th>tenants</th><th>seen</th><th>ticket</th></tr></thead><tbody><!--[--><tr><td><code>parser</code><br/><small class="svelte-1op6c6">month and day flipped: the shared parser reads day-first dates month first</small></td><td><strong>379</strong><!--[-1--><!--]--></td><td class="tags svelte-1op6c6">parser ×356 · hint ×23</td><td>11</td><td class="tags svelte-1op6c6">2026-04-01 → 2026-10-04</td><td><!--[0--><a href="https://github.com/MorleyB/mega-s01e03-what-it-shows/issues/1">#1</a><!--]--></td></tr><tr><td><code>hint</code><br/><small class="svelte-1op6c6">month and day flipped: booking-v3 form hint says MM/DD, the form reads the tenant’s DD/MM</small></td><td><strong>33</strong><!--[-1--><!--]--></td><td class="tags svelte-1op6c6">hint ×18 · parser ×15</td><td>3</td><td class="tags svelte-1op6c6">2026-04-17 → 2026-09-22</td><td><!--[0--><a href="https://github.com/MorleyB/mega-s01e03-what-it-shows/issues/2">#2</a><!--]--></td></tr><tr><td><code>shift</code><br/><small class="svelte-1op6c6">date moved by one day, not flipped</small></td><td><strong>5</strong><!--[0--><br/><small class="svelte-1op6c6">also counted under parser</small><!--]--></td><td class="tags svelte-1op6c6">parser ×5</td><td>5</td><td class="tags svelte-1op6c6">2026-04-02 → 2026-10-04</td><td><!--[0--><a href="https://github.com/MorleyB/mega-s01e03-what-it-shows/issues/3">#3</a><!--]--></td></tr><!--]--></tbody></table> <!--[--><p class="note svelte-1op6c6"><code>shift</code> reports: R-41202, R-41209, R-41236, R-41344, R-41620</p><!--]--><!----> <h2>How each report was placed</h2> <ol><li><strong>One id, one report.</strong> The export pages overlap, so some reports appear twice. Each is
 counted once.</li> <li><strong>One-day moves.</strong> Some reports say the date moved by one day: Tuesday became Monday,
@@ -41,19 +42,20 @@ swapped, except the one-day moves. A few bodies name no date at all (“is there
 country writes the day first”, “our October bookings came through for January”). They stay with
 their tenant’s cause.</p> <h2>Why it was one ticket</h2> <p><a href="/kb/decisions/0001-dedupe-by-subject">Decision 0001</a> merges on subject line alone. “Wrong date
 again” reads the same whether the parser flipped the date, the form hint misled the person, or
-the date moved by a day. The three problems share subjects, so they shared a ticket.</p> <h2>What changes for the desk</h2> <ul><li>Close #4471 only for the <strong>parser</strong> problem when its fix ships. Keep the <strong>hint</strong> and <strong>shift</strong> tickets open until they have fixes of their own.</li> <li>When a report comes in, place it with <code>causeOf</code> and the tenant, not by subject or intake tag.</li> <li>Read the body for a one-day move before merging it into a month-flip ticket.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-W4AY-SMFD</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+the date moved by a day. The three problems share subjects, so they shared a ticket.</p> <h2>What changes for the desk</h2> <ul><li>Closing #4471 closed the <strong>parser</strong> and <strong>hint</strong> problems only. Keep the <strong>shift</strong> ticket open
+until it has a fix of its own.</li> <li>When a report comes in, place it with <code>causeOf</code> and the tenant, not by subject or intake tag.</li> <li>Read the body for a one-day move before merging it into a month-flip ticket.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-W4AY-SMFD</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_qho7si = {
+					__sveltekit_e757i0 = {
 						base: new URL("../..", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../_app/immutable/entry/start.YHWwh1DH.js"),
-						import("../../_app/immutable/entry/app.Be33CEIg.js")
+						import("../../_app/immutable/entry/start.DGwWcvrN.js"),
+						import("../../_app/immutable/entry/app.DyOFonq7.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],

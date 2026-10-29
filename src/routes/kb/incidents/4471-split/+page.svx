@@ -21,12 +21,21 @@ signature: MorleyB
 </script>
 
 [#4471](/kb/incidents/4471) says one issue with one fix queued. Its reports describe three
-problems. The queued parser fix closes only the first one. Each problem now has its own ticket.
+problems. Each problem has its own ticket.
 
 <Callout kind="warn">
-#4471 is not one known issue. Fixing the parser leaves the booking-v3 form hint and the one-day
-move open.
+#4471 was closed on 5 October. Two of its three problems are done: the parser is fixed and the
+booking-v3 form is retired. The one-day move is not fixed. Its ticket stays open.
 </Callout>
+
+## Where each problem stands
+
+Engineering update, #4471 closed 5 October:
+
+- **parser**: fixed, `fix(dates): parse dd/mm for eu locales`. Ticket closed as completed.
+- **hint**: won't fix, the booking-v3 form is retired. Ticket closed as not planned.
+- **shift**: not in the update. Nothing fixed it, so its ticket **stays open**. The parser fix
+  changes how day and month are read; it does not move a date back by one day.
 
 ## What the reports say
 
@@ -61,8 +70,8 @@ the date moved by a day. The three problems share subjects, so they shared a tic
 
 ## What changes for the desk
 
-- Close #4471 only for the **parser** problem when its fix ships. Keep the **hint** and
-  **shift** tickets open until they have fixes of their own.
+- Closing #4471 closed the **parser** and **hint** problems only. Keep the **shift** ticket open
+  until it has a fix of its own.
 - When a report comes in, place it with `causeOf` and the tenant, not by subject or intake tag.
 - Read the body for a one-day move before merging it into a month-flip ticket.
 
