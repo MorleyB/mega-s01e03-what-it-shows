@@ -27,19 +27,19 @@
 <p class="sum">
   <strong>{split.unique}</strong> reports merged into #{ticket}
   ({split.rows} rows in the export; {split.rows - split.unique} are repeats of the same id) ·
-  <strong>{split.rowsByProblem.length}</strong> problems
+  <strong>{split.rowsByProblem.length}</strong> problems · counted the desk's way: a report counts
+  under the cause it is filed under
 </p>
 
 <table>
   <thead>
-    <tr><th>problem</th><th>reports</th><th>channels</th><th>intake tagged as</th><th>tenants</th><th>seen</th><th>ticket</th></tr>
+    <tr><th>problem</th><th>reports</th><th>intake tagged as</th><th>tenants</th><th>seen</th><th>ticket</th></tr>
   </thead>
   <tbody>
     {#each split.rowsByProblem as p (p.problem)}
       <tr>
         <td><code>{p.problem}</code><br /><small>{LABEL[p.problem]}</small></td>
-        <td><strong>{p.reports}</strong></td>
-        <td class="tags">{list(p.channels)}</td>
+        <td><strong>{p.reports}</strong>{#if p.filedUnder.length}<br /><small>also counted under {p.filedUnder.join(', ')}</small>{/if}</td>
         <td class="tags">{list(p.taggedAs)}</td>
         <td>{p.tenants}</td>
         <td class="tags">{p.firstSeen} → {p.lastSeen}</td>

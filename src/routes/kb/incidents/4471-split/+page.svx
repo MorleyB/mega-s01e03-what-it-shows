@@ -36,15 +36,15 @@ move open.
 
 1. **One id, one report.** The export pages overlap, so some reports appear twice. Each is
    counted once.
-2. **One-day moves first.** Some reports say the date moved by one day: Tuesday became Monday,
+2. **One-day moves.** Some reports say the date moved by one day: Tuesday became Monday,
    a client in Lisbon and a client in Toronto got different days for the same meeting, every
    June booking is a day off. A flipped month cannot do that. The desk had already read these as
-   one-day moves (`desk-notes.json`). Here they are their own problem, not a footnote under the
-   tenant's cause.
+   one-day moves (`desk-notes.json`). Here they are their own problem with their own ticket.
+   They stay counted under the cause they are filed under, as the desk counts.
 3. **The rest by tenant and channel** (`causes.ts`). Every tenant on file writes the day first.
    A report through a **booking-v3** form is the **hint** problem: the form tells people to type
-   `MM/DD/YYYY` and then reads the date the tenant's way. Every other report is the **parser**
-   problem: the shared parser reads the date month first.
+   `MM/DD/YYYY` and then reads the date the tenant's way. Every other report is filed under the
+   **parser** problem: the shared parser reads the date month first.
 4. **Not by intake tag.** Intake guesses the cause from the reporter's browser locale. The
    "intake tagged as" column shows how often that guess is wrong.
 
