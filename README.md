@@ -34,3 +34,14 @@ Support desk. Decision records: whoever signed them.
 ---
 
 Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
+
+---
+
+## Added for MEGA.dev S01E03 (MorleyB)
+
+- `src/routes/kb/incidents/4471-split/+page.svx` — signed page: #4471 is three problems, not one.
+- `src/lib/kb/problems.ts`, `src/lib/kb/ProblemTable.svelte` — the split, computed at render time.
+- `rendered/` — the kb as the desk sees it (`npm install && npm run build`). The page: `rendered/kb/incidents/4471-split.html`.
+- `package.json`, `svelte.config.js`, `vite.config.js`, `src/app.html`, `src/routes/+layout.ts` — minimal build config; the export shipped without one.
+
+Tickets: [#1 parser](../../issues/1) · [#2 hint](../../issues/2) · [#3 one-day move](../../issues/3)

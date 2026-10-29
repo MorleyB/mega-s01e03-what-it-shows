@@ -1,0 +1,69 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: MorleyB
+status: open
+reviewed: 2026-10-29
+signature: MorleyB
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const repo = 'https://github.com/MorleyB/mega-s01e03-what-it-shows';
+  const issues = {
+    parser: `${repo}/issues/1`,
+    hint: `${repo}/issues/2`,
+    shift: `${repo}/issues/3`,
+  };
+</script>
+
+[#4471](/kb/incidents/4471) says one issue with one fix queued. Its reports describe three
+problems. The queued parser fix closes only the first one. Each problem now has its own ticket.
+
+<Callout kind="warn">
+#4471 is not one known issue. Fixing the parser leaves the booking-v3 form hint and the one-day
+move open.
+</Callout>
+
+## What the reports say
+
+<ProblemTable ticket={4471} {issues} />
+
+## How each report was placed
+
+1. **One id, one report.** The export pages overlap, so some reports appear twice. Each is
+   counted once.
+2. **One-day moves first.** Some reports say the date moved by one day: Tuesday became Monday,
+   a client in Lisbon and a client in Toronto got different days for the same meeting, every
+   June booking is a day off. A flipped month cannot do that. The desk had already read these as
+   one-day moves (`desk-notes.json`). Here they are their own problem, not a footnote under the
+   tenant's cause.
+3. **The rest by tenant and channel** (`causes.ts`). Every tenant on file writes the day first.
+   A report through a **booking-v3** form is the **hint** problem: the form tells people to type
+   `MM/DD/YYYY` and then reads the date the tenant's way. Every other report is the **parser**
+   problem: the shared parser reads the date month first.
+4. **Not by intake tag.** Intake guesses the cause from the reporter's browser locale. The
+   "intake tagged as" column shows how often that guess is wrong.
+
+The report bodies back this up. Every body that names two dates names the same day and month,
+swapped, except the one-day moves. A few bodies name no date at all ("is there a setting for my
+country writes the day first", "our October bookings came through for January"). They stay with
+their tenant's cause.
+
+## Why it was one ticket
+
+[Decision 0001](/kb/decisions/0001-dedupe-by-subject) merges on subject line alone. "Wrong date
+again" reads the same whether the parser flipped the date, the form hint misled the person, or
+the date moved by a day. The three problems share subjects, so they shared a ticket.
+
+## What changes for the desk
+
+- Close #4471 only for the **parser** problem when its fix ships. Keep the **hint** and
+  **shift** tickets open until they have fixes of their own.
+- When a report comes in, place it with `causeOf` and the tenant, not by subject or intake tag.
+- Read the body for a one-day move before merging it into a month-flip ticket.
+
+<RenderStamp {signature} />
